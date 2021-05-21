@@ -5,8 +5,8 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
-// const sequelize = require('./config/connection');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Sets up the Express App
 const app = express();
@@ -17,12 +17,12 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super secret secret',
-  // cookie: {},
+  cookie: {},
   resave: false,
   saveUninitialized: false,
-  // store: new SequelizeStore({
-  //   db: sequelize
-  // })
+  store: new SequelizeStore({
+    db: sequelize
+  })
 };
 
 //middleware
@@ -38,10 +38,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-// sequelize.sync({ force: false }).then(() => {
-//   app.listen(PORT, () => console.log('Now listening'));
-// });
-
-app.listen(PORT, () => {
-  console.log('Server listening on: http://localhost:' + PORT);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
+
+//old
+// app.listen(PORT, () => {
+//   console.log('Server listening on: http://localhost:' + PORT);
+// });
