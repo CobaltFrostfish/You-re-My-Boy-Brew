@@ -1,3 +1,4 @@
+id,name,brewery_type,street,city,state,postal_code,website_url,phone,longitude,latitude
 1,10 Barrel Brewing Co - Denver,large,2620 Walnut St,Denver,Colorado,80205,,7205738992,-104.9853655,39.7592508
 1,10 Barrel Brewing Co - Denver,large,2620 Walnut St,Denver,Colorado,80205,,7205738992,-104.9853655,39.7592508
 2,105 West Brewing Co,micro,1043 Park St,Castle Rock,Colorado,80109,http://www.105westbrewing.com,3033257321,-104.8667206,39.38269495
