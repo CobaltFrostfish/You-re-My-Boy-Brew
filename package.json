@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/RLacer/You-re-My-Boy-Brew#readme",
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.11.4",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^9.0.2",
