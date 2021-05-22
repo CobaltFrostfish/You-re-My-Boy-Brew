@@ -8,6 +8,7 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -18,12 +19,13 @@ const sess = {
   secret: 'Super secret secret',
   cookie: {},
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: new SequelizeStore({
     db: sequelize
   })
 };
 
+//middleware
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use
@@ -39,3 +41,8 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+//old
+// app.listen(PORT, () => {
+//   console.log('Server listening on: http://localhost:' + PORT);
+// });
