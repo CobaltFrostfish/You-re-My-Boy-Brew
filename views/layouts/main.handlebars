@@ -12,6 +12,13 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+    <script
+      src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"
+    ></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
   </head>
   <body>
@@ -44,7 +51,8 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#" style="color: black;">Map + List</a>
+              <a class="nav-link" href="/mappage" style="color: black;">Map +
+                List</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" style="color: black;">About</a>
@@ -101,6 +109,7 @@
     ></script>
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>
+
     {{/if}}
   </body>
 </html>
