@@ -50,3 +50,8 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+
+.btn-outline-success:hover {
+  border-color: red;
+}
