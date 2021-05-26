@@ -1,11 +1,11 @@
 const User = require('./User');
-const Brew = require('./Brew');
+// const Brew = require('./Brew');
 
-User.hasMany(Brew, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
+// User.hasMany(Brew, {
+//   foreignKey: 'user_id',
+//   onDelete: 'CASCADE'
+// });
 
 
 
-module.exports = { User, Brew };
+module.exports = { User};
