@@ -65,8 +65,29 @@ body, html {
 	z-index: -100;
 }
 
+.mapboxgl-canvas-container {
+  height: 500px;
+}
+
+.marker {
+  background-image: url('mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
 
 
-
-
-
+.btn-outline-success:hover {
+  border-color: red;
+}
