@@ -23,4 +23,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Map route
+router.get('/mapPage', (req, res) => {
+
+  res.render('mappage');
+});
+
 module.exports = router;
