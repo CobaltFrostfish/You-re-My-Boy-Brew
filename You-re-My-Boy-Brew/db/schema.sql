@@ -1,0 +1,4 @@
+
+DROP DATABASE IF EXISTS boybrew_db;
+
+CREATE DATABASE boybrew_db;
