@@ -1,21 +1,20 @@
 const router = require('express').Router();
 const {Brew} = require('../../models');
 
-
-router.get('/', async (req, res) => {
+// get all the breweries in a city 
+router.post('/', async (req, res) => { //should this be a post or get
   try {
-    // const city = req.body.city;
+    const city = req.body.city;
     console.log("Hit this");
-    const locationsData = await Brew.findAll({
-      where: { city: req.body.city }, 
-    });
+    const locationsData = await Brew.findAll({where: {city: city}});
+    console.log(locationsData)
+
 
     const locations = locationsData.map(location => location.get({
       plain: true
     }));
     console.log(locations)
     res.json(JSON.stringify(locations));
-    res.render('mappage')
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

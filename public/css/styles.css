@@ -65,9 +65,6 @@ body, html {
 	z-index: -100;
 }
 
-.mapboxgl-canvas-container {
-  height: 500px;
-}
 
 .marker {
   background-image: url('mapbox-icon.png');
@@ -90,4 +87,10 @@ body, html {
 
 .btn-outline-success:hover {
   border-color: red;
+}
+
+.mapboxgl-canvas-container {
+  width: 500px;
+  height: 600px;
+
 }
