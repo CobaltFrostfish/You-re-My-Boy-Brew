@@ -1,42 +1,162 @@
 <nav class="navbar navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" >Search a city and find all the Breweries in that city! </a>
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="City" aria-label="Search">
-      <button class="btn btn-outline-success" style='background:white; color:black;' type="submit">Search!</button>
-    </form>
-  </div>
+	<div class="container-fluid">
+		<a class="navbar-brand">Search a city and find all the Breweries in that city! </a>
+		<form class="d-flex">
+			<input class="form-control me-2" type="search" placeholder="City" aria-label="Search">
+			<button class="btn btn-outline-success" style='background:white; color:black;' type="submit">Search!</button>
+		</form>
+	</div>
 </nav>
 
 <div id="map"></div>
 
 <nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <form class="d-flex" id="form_search">
-      <input class="form-control me-2" id="find_city" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" id="find_button" type="submit">Search</button>
-    </form>
-  </div>
+	<div class="container-fluid">
+		<form class="d-flex" id="form_search">
+
+			<input class="form-control me-2" id="find_city" list="datalistOptions" type="search" placeholder="Search"
+				aria-label="Search">
+			<datalist id="datalistOptions">
+				<option value="Alamosa">
+				<option value="Arvada">
+				<option value="Aspen">
+				<option value="Aurora">
+				<option value="Bailey">
+				<option value="Basalt">
+				<option value="Bayfield">
+				<option value="Berthoud">
+				<option value="Boulder">
+				<option value="Breckenridge">
+				<option value="Brighton">
+				<option value="Broomfield">
+				<option value="Buena Vista">
+				<option value="Canon City">
+				<option value="Carbondale">
+				<option value="Castle Rock">
+				<option value="Cedaredge">
+				<option value="Centennial">
+				<option value="Central City">
+				<option value="Colorado Springs">
+				<option value="Cortez">
+				<option value="Crested Butte">
+				<option value="Crestone">
+				<option value="del Norte">
+				<option value="Denver">
+				<option value="Dillon">
+				<option value="Divide">
+				<option value="Dolores">
+				<option value="Durango">
+				<option value="Eagle">
+				<option value="Edgewater">
+				<option value="Edwards">
+				<option value="Englewood">
+				<option value="Erie">
+				<option value="Estes Park">
+				<option value="Evergreen">
+				<option value="Fairplay">
+				<option value="Florence">
+				<option value="Florissant">
+				<option value="Fort Collins">
+				<option value="Frederick">
+				<option value="Frisco">
+				<option value="Fruita">
+				<option value="Georgetown">
+				<option value="Glenwood Springs">
+				<option value="Golden">
+				<option value="Granby">
+				<option value="Grand Junction">
+				<option value="Greeley">
+				<option value="Greenwood Village">
+				<option value="Gunnison">
+				<option value="Hayden">
+				<option value="Highlands Ranch">
+				<option value="Idaho Springs">
+				<option value="Johnstown">
+				<option value="Kremmling">
+				<option value="La Junta">
+				<option value="Lafayette">
+				<option value="Lake City">
+				<option value="Lakewood">
+				<option value="Leadville">
+				<option value="Littleton">
+				<option value="Lone Tree">
+				<option value="Longmont">
+				<option value="Louisville">
+				<option value="Loveland">
+				<option value="Lyons">
+				<option value="Mancos">
+				<option value="Manitou Springs">
+				<option value="Montrose">
+				<option value="Monument">
+				<option value="Nederland">
+				<option value="Niwot">
+				<option value="Northglenn">
+				<option value="Ouray">
+				<option value="Pagosa Springs">
+				<option value="Palisade">
+				<option value="Paonia">
+				<option value="Parker">
+				<option value="Peyton">
+				<option value="Poncha Springs">
+				<option value="Pueblo">
+				<option value="Ridgway">
+				<option value="Salida">
+				<option value="Sheridan">
+				<option value="Silverthorne">
+				<option value="Silverton">
+				<option value="Steamboat Springs">
+				<option value="Sterling">
+				<option value="Telluride">
+				<option value="Thornton">
+				<option value="Vail">
+				<option value="Wellington">
+				<option value="Westminster">
+				<option value="Wheat Ridge">
+				<option value="Windsor">
+				<option value="Winter Park">
+				<option value="Woodland Park">
+				<option value="Yuma">
+			</datalist>
+
+			<button class="btn btn-outline-success" id="find_button" type="submit">Search</button>
+		</form>
+	</div>
 </nav>
 
 <style>
-  .marker { background-image: url('./images/push.png'); background-size:
-  cover; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; }
-  
-  .mapboxgl-popup { max-width: 200px; } .mapboxgl-popup-content { text-align:
-  center; font-family: 'Open Sans', sans-serif; }
+	.marker {
+		background-image: url('./images/Map-Marker-Ball.png');
+		background-size:
+			cover;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	.mapboxgl-popup {
+		max-width: 200px;
+	}
+
+	.mapboxgl-popup-content {
+		text-align:
+			center;
+		font-family: 'Open Sans', sans-serif;
+	}
 </style>
 
-<div class="container">
-
-<div class="list-group">
-  <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-    Brewery Name:
-  </button>
-  <button type="button" class="list-group-item list-group-item-action">A second item</button>
-  <button type="button" class="list-group-item list-group-item-action">A third button item</button>
-  <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
-</div>
+<table class="table table-hover tableMap">
+	<thead>
+		<tr class="bg-warning tableTitle">
+			<th scope="col">Brewery Name</th>
+			<th scope="col">Address</th>
+			<th scope="col">Website</th>
+			<th scope="col">Reviews</th>
+		</tr>
+	</thead>
+	<tbody class="tableBody">
+	</tbody>
+</table>
 
 </div>
 <script src="/js/mappage.js"></script>

@@ -12,12 +12,12 @@ const initMap = async (locations) => {
   locations = JSON.parse(locations);
 
   locations.forEach(location => {
-    console.log(location)
+    // console.log(location)
     let lngLat = [];
     lngLat.push(location.longitude, location.latitude);
 
     if (lngLat[0] != null && lngLat[1] != null) {
-      console.log(lngLat)
+      // console.log(lngLat)
       let marker = {
         type: 'Feature',
         geometry: {
@@ -26,7 +26,9 @@ const initMap = async (locations) => {
         },
         properties: {
           title: location.name,
-          description: location.brewery_type + ", " + location.website_url //need to link the website 
+          description: location.brewery_type ,
+					website_url: location.website_url,
+					address: location.street,
         }
       }
       markers.push(marker);
@@ -51,12 +53,37 @@ const initMap = async (locations) => {
       .setPopup(new mapboxgl.Popup({
           offset: 25
         }) // add popups
-        .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+        .setHTML(`<h3> ${marker.properties.title} </h3>
+				<p>  ${marker.properties.address} </p>
+				<p>  ${marker.properties.description} </p>
+				<h5><a href="${marker.properties.website_url}"> Website Link </a></h5>`))
       .addTo(map);
   });
 }
+
+const initTable = (jsonData) => {
+
+	console.log('----------------------------------------------------------------------------');
+	console.log(jsonData);
+	const tableData = document.querySelector('.tableBody');
+
+	const mapTableData = jsonData.map(i => {
+		return `<tr>
+		<td>${i.name}</td>
+		<td>${i.street} ${i.city}, ${i.state}</td>
+		<td><a href='${i.url}'>Link</a></td>
+		<th scope="col">
+			<a class="btnLinks" id="brewButton" href="/" target="_blank">View</a>
+		</th>
+		</tr>`
+		// the / in the code above needs to be tied to the brew id
+	})
+	const joinString = mapTableData.join('');
+	tableData.appendChild(joinString);
+};
+
 const searchCity = async (cityName) => {
-  console.log(cityName)
+  // console.log(cityName)
   let city = cityName.substring(0, 1).toUpperCase() + cityName.substring(1);
 
   fetch('/api/map', {
@@ -68,15 +95,16 @@ const searchCity = async (cityName) => {
       'Content-Type': 'application/json'
     },
   }).then(res => res.json()).then(json => {
-    console.log(json)
+    // console.log(json)
     if (json) {
       initMap(json);
+			initTable(json);
     }
   })
 }
 const searchHandler = async (event) => {
   event.preventDefault();
-  console.log(event)
+  // console.log(event)
   // Collect values from the users input city 
   const city = document.querySelector('#find_city').value.trim();
   searchCity(city)

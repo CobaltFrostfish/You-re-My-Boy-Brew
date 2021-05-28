@@ -5,18 +5,18 @@ const {Brew} = require('../../models');
 router.post('/', async (req, res) => { //should this be a post or get
   try {
     const city = req.body.city;
-    console.log("Hit this");
+    // console.log("Hit this");
     const locationsData = await Brew.findAll({where: {city: city}});
-    console.log(locationsData)
+    // console.log(locationsData)
 
 
     const locations = locationsData.map(location => location.get({
       plain: true
     }));
-    console.log(locations)
+    // console.log(locations)
     res.json(JSON.stringify(locations));
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(500).json(err);
   }
 })
