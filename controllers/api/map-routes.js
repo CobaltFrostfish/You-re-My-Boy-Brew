@@ -27,6 +27,26 @@ module.exports = router;
 
 
 
+const array = [
+  {
+  city: "denver",
+  address: "1234 main st",
+  url: "https://happy.com"
+  },{
+    city: "denver",
+    address: "1234 main st",
+    url: "https://happy.com"
+    },{
+      city: "denver",
+      address: "1234 main st",
+      url: "https://happy.com"
+      }, {
+        city: "denver",
+        address: "1234 main st",
+        url: "https://happy.com"
+        }
+];
+
 
 
 
