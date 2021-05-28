@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       loggedIn: req.session.loggedIn
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(500).json(err);
   }
 });
@@ -24,8 +24,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/mappage', (req, res) => {
-  res.render('mappage');
+router.get('/mapPage', (req, res) => {
+  res.render('mapPage');
 });
 
 // Ratings
