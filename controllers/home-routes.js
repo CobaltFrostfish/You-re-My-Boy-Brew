@@ -28,4 +28,11 @@ router.get('/mappage', (req, res) => {
 
   res.render('mappage');
 });
+
+// Ratings
+router.get('/ratings', (req, res) => {
+
+  res.render('ratings');
+});
+
 module.exports = router;
