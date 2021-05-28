@@ -12,7 +12,7 @@ Review.init(
 			autoIncrement: true,
 		},
 		user_id: {
-			type:
+			type: true
 		}
 	},
 	{

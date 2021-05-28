@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {Brew} = require('../../models');
 
 // get all the breweries in a city 
-router.post('/', async (req, res) => { //should this be a post or get
+router.post('/', async (req, res) => {
   try {
     const city = req.body.city;
     console.log("Hit this");
@@ -25,7 +25,37 @@ module.exports = router;
 
 
 
+const array = [
+  {
+  city: "denver",
+  address: "1234 main st",
+  url: "https://happy.com"
+  },{
+    city: "denver",
+    address: "1234 main st",
+    url: "https://happy.com"
+    },{
+      city: "denver",
+      address: "1234 main st",
+      url: "https://happy.com"
+      }, {
+        city: "denver",
+        address: "1234 main st",
+        url: "https://happy.com"
+        }
+];
 
+const tdData = document.getElementById('tableData');
+const mapData = array.map(item =>{
+  console.log(item);
+  return `<tr><td>${item.city}</td><td>${item.address}</td><td>${item.url}</td></tr>`
+});
+
+const joinString = mapData.join('');
+
+console.log(joinString);
+
+table.appendChild(joinString);
 
 
 // const router = require('express').Router();
