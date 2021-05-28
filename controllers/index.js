@@ -7,10 +7,3 @@ router.use('/api', apiRoutes);
 
 module.exports = router;
 
-
-
-//Test code
-// const loginTest = require('./loginTest');
-// router.use('/', loginTest);
-
-
