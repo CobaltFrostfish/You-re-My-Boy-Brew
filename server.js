@@ -46,6 +46,23 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
+// app.use((req, res, next) => {
+//   const render = res.render;
+//   const send = res.send;
+//   res.render = function renderWrapper(...args) {
+//       Error.captureStackTrace(this);
+//       return render.apply(this, args);
+//   };
+//   res.send = function sendWrapper(...args) {
+//       try {
+//           send.apply(this, args);
+//       } catch (err) {
+//           console.error(`Error in res.send | ${err.code} | ${err.message} | ${res.stack}`);
+//       }
+//   };
+//   next();
+// });
+
 //old
 // app.listen(PORT, () => {
 //   console.log('Server listening on: http://localhost:' + PORT);
