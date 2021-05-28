@@ -45,17 +45,7 @@ const array = [
         }
 ];
 
-const tdData = document.getElementById('tableData');
-const mapData = array.map(item =>{
-  console.log(item);
-  return `<tr><td>${item.city}</td><td>${item.address}</td><td>${item.url}</td></tr>`
-});
 
-const joinString = mapData.join('');
-
-console.log(joinString);
-
-table.appendChild(joinString);
 
 
 // const router = require('express').Router();
