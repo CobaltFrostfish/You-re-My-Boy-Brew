@@ -90,8 +90,8 @@ const initTable = (data) => {
 		var aBtn = document.createElement('a');
 		aBtn.setAttribute("class", "btnLinks");
 		aBtn.setAttribute("id", "brewButton");
-		// need to change
-		aBtn.setAttribute("href", "/");
+		// Get the Id of the brewery selected and route to that page.
+		aBtn.setAttribute("href", `/review/${data[i].id}`);
 		aBtn.setAttribute("target", "_blank");
 		aBtn.textContent = "View"
 		thCol.append(aBtn);

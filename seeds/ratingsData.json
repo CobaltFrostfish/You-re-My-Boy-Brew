@@ -1,16 +1,8 @@
 [
     {
-        "brew_id": "1",
-        "id": "1",
-        "stars": "5",
-        "comment": "Beer was delicious! Atmosphere was great",
-        "user_id": "1"
-    },
-    {
-        "id": "2",
-        "stars": "4",
-        "comment": "Good beer, great location! Wish they had food.",
-        "user_id": "2",
-        "brew_id": "2"
+			"stars": "5",
+			"comment": "Beer was delicious! Atmosphere was great",
+			"review_id": "1",
+			"user_id": "1"
     }
 ]

@@ -155,3 +155,16 @@ body, html {
 	margin-top: 75px;
 	box-shadow: 0px 2px 0px  ;
 }
+
+.reviewCont{
+	margin-top: 115px;
+}
+
+.ratingCont{
+	max-width: 550px;
+	border-style: groove;
+}
+
+.ratingText{
+	font-size: x-large;
+}
