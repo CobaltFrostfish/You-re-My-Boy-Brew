@@ -75,6 +75,15 @@
 	{{#if loggedIn}}
 	<script src="/js/logout.js"></script>
 	{{/if}}
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoiY29keWctMjAyMSIsImEiOiJja3AwNTNnY2MweG5mMndrODlyOGJtaTN5In0.iNvIgq19IAzSi0W6PuWVvQ';
+		var map = new mapboxgl.Map({
+			container: 'map', // container ID
+			style: 'mapbox://styles/mapbox/streets-v11', // style URL
+			center: [-104.99, 39.76], // starting position [lng, lat]
+			zoom: 9 // starting zoom
+		});
+	</script>
 </body>
 
 </html>
