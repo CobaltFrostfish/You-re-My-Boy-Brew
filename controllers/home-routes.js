@@ -29,7 +29,6 @@ router.get('/mappage', (req, res) => {
 });
 
 // Ratings
-router.get('/ratings', (req, res) => {
 
 router.get('/ratings', (req, res) => {
   res.render('ratings');
