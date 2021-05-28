@@ -7,10 +7,3 @@ router.use('/', homeRoutes);
 
 module.exports = router;
 
-
-
-//Test code
-// const loginTest = require('./loginTest');
-// router.use('/', loginTest);
-
-
