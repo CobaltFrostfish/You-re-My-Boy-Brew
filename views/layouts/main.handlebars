@@ -18,6 +18,7 @@
 
 	<link rel="stylesheet" type="text/css" href="/css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="/css/parallax.css" />
+	{{!-- <link rel="stylesheet" type="text/css" href="/css/ratings-style.css" /> --}}
 </head>
 
 <body>
@@ -37,10 +38,7 @@
 						<a class="nav-link active" aria-current="page" href="/">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/mapPage">Map & List</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/about">About</a>
+						<a class="nav-link" href="/mappage">Map & List</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/about">About</a>
@@ -50,7 +48,7 @@
 							aria-expanded="false">User</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdown05">
 							<li><a class="dropdown-item" href="#">Profile</a></li>
-							<li><a class="dropdown-item" href="#">Review</a></li>
+							<li><a class="dropdown-item" href="/ratings">Review</a></li>
 							<li><a class="dropdown-item" href="#">Blog</a></li>
 						</ul>
 					</li>
@@ -62,10 +60,6 @@
 						{{/if}}
 					</li>
 				</ul>
-				{{!-- Do we need search? --}}
-				{{!-- <form>
-					<input class="form-control" type="text" placeholder="Search" aria-label="Search">
-				</form> --}}
 			</div>
 		</div>
 	</nav>
@@ -80,84 +74,6 @@
 	{{#if loggedIn}}
 	<script src="/js/logout.js"></script>
 	{{/if}}
-	{{!-- The Mapbox Code --}}
-	<script>
-		mapboxgl.accessToken = 'pk.eyJ1IjoiY29keWctMjAyMSIsImEiOiJja3AwNTNnY2MweG5mMndrODlyOGJtaTN5In0.iNvIgq19IAzSi0W6PuWVvQ';
-		var map = new mapboxgl.Map({
-			container: 'map', // container ID
-			style: 'mapbox://styles/mapbox/streets-v11', // style URL
-			center: [-104.99, 39.76], // starting position [lng, lat]
-			zoom: 9 // starting zoom
-		});
-	</script>
 </body>
 
 </html>
-
-</nav>
-{{! Ending of Navbar }}
-<main>
-	{{{body}}}
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-
-{{/if}}
-</body>
-
-</html>
-
-
-
-
-
-
-
-{{! Beginning of OLD Navbar }}
-{{!-- <nav class="navbar navbar-expand-lg" style="background-color: white; margin-block: 25px;">
-	<div class="container-fluid">
-		<img src="/images/brew.png" alt="" width="60" height="60" class="d-inline-block align-text-top" />
-		<a class="navbar-brand navTitle" style="color: black;" href="/">You're My Boy,
-			Brew!</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-			aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" href="/mapPage" style="color: black;">Map + List</a>
-					<a class="nav-link" href="/mappage" style="color: black;">Map +
-						Brew List</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="#" style="color: black;">About</a>
-				</li>
-
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" style="color: black;" href="#" id="navbarDropdownMenuLink" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false">
-						Review + Blog
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<li><a class="dropdown-item" href="#">Review</a></li>
-						<li><a class="dropdown-item" href="#">Blog</a></li>
-						<li><a class="dropdown-item" href="#">Something else here</a></li>
-					</ul>
-				</li>
-				<li class="nav-item">
-					{{#if loggedIn}}
-					<a class="nav-link active logout" style="color: black;" aria-current="page">Logout</a>
-					{{else}}
-					<a class="nav-link active" style="color: black;" aria-current="page" href="/login">Login</a>
-					{{/if}}
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav> --}}
-{{! Ending of OLD Navbar }}
