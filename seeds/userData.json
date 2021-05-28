@@ -13,10 +13,5 @@
       "username": "Jovan",
       "email": "jovan@jovan.com",
       "password": "Jovan2021"
-    },
-    {
-        "username": "Rebecca",
-        "email": "rebecca@rebecca.com",
-        "password": "Rebecca2021"
-      }
+    }
   ]
