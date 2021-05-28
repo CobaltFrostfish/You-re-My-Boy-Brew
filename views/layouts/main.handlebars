@@ -18,6 +18,7 @@
 
 	<link rel="stylesheet" type="text/css" href="/css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="/css/parallax.css" />
+	{{!-- <link rel="stylesheet" type="text/css" href="/css/ratings-style.css" /> --}}
 </head>
 
 <body>
@@ -47,7 +48,7 @@
 							aria-expanded="false">User</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdown05">
 							<li><a class="dropdown-item" href="#">Profile</a></li>
-							<li><a class="dropdown-item" href="#">Review</a></li>
+							<li><a class="dropdown-item" href="/ratings">Review</a></li>
 							<li><a class="dropdown-item" href="#">Blog</a></li>
 						</ul>
 					</li>
@@ -73,16 +74,6 @@
 	{{#if loggedIn}}
 	<script src="/js/logout.js"></script>
 	{{/if}}
-	{{!-- The Mapbox Code --}}
-	<script>
-		mapboxgl.accessToken = 'pk.eyJ1IjoiY29keWctMjAyMSIsImEiOiJja3AwNTNnY2MweG5mMndrODlyOGJtaTN5In0.iNvIgq19IAzSi0W6PuWVvQ';
-		var map = new mapboxgl.Map({
-			container: 'map', // container ID
-			style: 'mapbox://styles/mapbox/streets-v11', // style URL
-			center: [-104.99, 39.76], // starting position [lng, lat]
-			zoom: 9 // starting zoom
-		});
-	</script>
 </body>
 
 </html>
