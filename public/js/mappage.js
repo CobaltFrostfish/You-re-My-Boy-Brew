@@ -1,16 +1,11 @@
-const initMap = async (locations) => {
+const initMap = (locations) => {
+	// console.log(locations.body);
   mapboxgl.accessToken = "pk.eyJ1Ijoiam1uZmlyZSIsImEiOiJja3AwNTBrMDUwcGllMm5scW81ejB3dm85In0.f3sp4fDOV3SNCPxG4ExOEw"
-  // let map = new mapboxgl.Map({
-  //   container: 'map', // container id
-  //   style: 'mapbox://styles/mapbox/streets-v11', // style URL
-  //   center: [-104.9903, 39.7392], // starting position [lng, lat] need to find a person's geolocation with coords
-  //   zoom: 9 // starting zoom
-  // });
-
-
-  const markers = []
-  locations = JSON.parse(locations);
-
+  
+  const markers = [];
+	// console.log(markers);
+  // locations = JSON.parse(locations);
+	
   locations.forEach(location => {
     // console.log(location)
     let lngLat = [];
@@ -34,6 +29,8 @@ const initMap = async (locations) => {
       markers.push(marker);
     }
   });
+
+	// $('.mapboxgl-marker').empty();
 
   const geojson = {
     type: 'FeatureCollection',
@@ -61,61 +58,116 @@ const initMap = async (locations) => {
   });
 }
 
-const initTable = (jsonData) => {
-
-	console.log('----------------------------------------------------------------------------');
-	console.log(jsonData);
+const initTable = (data) => {
 	const tableData = document.querySelector('.tableBody');
+	$('.tableBody').empty();
+	$('.tableMap').attr('style', 'display: block');
 
-	const mapTableData = jsonData.map(i => {
-		return `<tr>
-		<td>${i.name}</td>
-		<td>${i.street} ${i.city}, ${i.state}</td>
-		<td><a href='${i.url}'>Link</a></td>
-		<th scope="col">
-			<a class="btnLinks" id="brewButton" href="/" target="_blank">View</a>
-		</th>
-		</tr>`
-		// the / in the code above needs to be tied to the brew id
-	})
-	const joinString = mapTableData.join('');
-	tableData.appendChild(joinString);
+	for (let i = 0; i < data.length; i++) {
+		var tr = document.createElement('tr');
+		tableData.append(tr);
+
+		var tdName = document.createElement('td');
+		tdName.textContent = `${data[i].name}`; 
+		tr.append(tdName);
+		
+		var tdAdd = document.createElement('td');
+		tdAdd.textContent = `${data[i].street} ${data[i].city}, ${data[i].state}`; 
+		tr.append(tdAdd);
+
+		var tdLinkHold = document.createElement('td');
+		tr.append(tdLinkHold);
+
+		var aUrl = document.createElement('a');
+		aUrl.setAttribute("href", `${data[i].website_url}`);
+		aUrl.textContent = "Link";
+		tdLinkHold.append(aUrl);
+
+		var thCol = document.createElement('th');
+		thCol.setAttribute("scope", "col");
+		tr.append(thCol);
+
+		var aBtn = document.createElement('a');
+		aBtn.setAttribute("class", "btnLinks");
+		aBtn.setAttribute("id", "brewButton");
+		// need to change
+		aBtn.setAttribute("href", "/");
+		aBtn.setAttribute("target", "_blank");
+		aBtn.textContent = "View"
+		thCol.append(aBtn);
+
+	};
 };
 
-const searchCity = async (cityName) => {
-  // console.log(cityName)
-  let city = cityName.substring(0, 1).toUpperCase() + cityName.substring(1);
-
-  fetch('/api/map', {
-    method: 'POST',
-    body: JSON.stringify({
-      city
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  }).then(res => res.json()).then(json => {
-    // console.log(json)
-    if (json) {
-      initMap(json);
-			initTable(json);
-    }
-  })
-}
 const searchHandler = async (event) => {
-  event.preventDefault();
-  // console.log(event)
-  // Collect values from the users input city 
-  const city = document.querySelector('#find_city').value.trim();
-  searchCity(city)
-};
+	event.preventDefault();
+
+	const city = document.querySelector('#find_city').value.trim();
+	// console.log(city);
+	if(city) {
+		const response = await fetch('/api/map', {
+			method: 'POST',
+			body: JSON.stringify({ city }),
+			headers: { 'Content-Type': 'application/json' },
+		});
+		if (response.ok) {
+			response.json().then(function(data){
+				// console.log(data);
+				initMap(data);
+				initTable(data);
+			});
+		} else {
+			alert(response.statusText);
+		}
+	}
+}
 
 document.querySelector('#form_search').addEventListener('submit', searchHandler);
 
+// const searchCityOLD = async (cityName) => {
 
+//   // console.log(cityName);
+//   let city = cityName.substring(0, 1).toUpperCase() + cityName.substring(1);
 
+//   fetch('/api/map', {
+//     method: 'POST',
+//     body: JSON.stringify({
+//       city
+//     }),
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//   }).then(res => res.json()).then(json => {initMap(json);})
+// };
 
+// const searchHandlerOLD = async (event) => {
+//   event.preventDefault();
+//   // console.log(event)
+//   // Collect values from the users input city 
+//   const city = document.querySelector('#find_city').value.trim();
+//   searchCity(city)
+// };
 
+// // // Table that didnt work append
+	// // const mapTableData = data.map(i => {
+	// 	return `
+		// <tr>
+		// <td>${i.name}</td>
+
+		// <td>${i.street} ${i.city}, ${i.state}</td>
+
+		// <td><a href='${i.url}'>Link</a></td>
+
+		// <th scope="col">
+		// 	<a class="btnLinks" id="brewButton" href="/" target="_blank">View</a>
+		// </th>
+		// </tr>`
+		// the / in the code above needs to be tied to the brew id
+	// });
+	// // console.log(mapTableData);
+	// const joinString = mapTableData.join('');
+	// // console.log(joinString);
+	// return tableData.appendChild(document.createElement('p'));
 
 
 
