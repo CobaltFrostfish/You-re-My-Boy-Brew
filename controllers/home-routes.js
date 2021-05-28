@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 // GET all galleries for homepage
+// http://localhost:3001/
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
@@ -12,7 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Login route
+// http://localhost:3001/login
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
@@ -23,15 +24,14 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// map list
 router.get('/mappage', (req, res) => {
-
   res.render('mappage');
 });
 
 // Ratings
 router.get('/ratings', (req, res) => {
 
+router.get('/ratings', (req, res) => {
   res.render('ratings');
 });
 

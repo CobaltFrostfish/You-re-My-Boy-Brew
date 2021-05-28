@@ -1,18 +1,18 @@
-/*@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-  *{   
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}*/
-.ratings-body{ 
+} */
+/* html,body{
     display: grid;
     height: 100%;
     place-items: center;
     text-align: center;
     background: #fff;
-}
-.ratings-container{
+} */
+.container{
     position: relative;
     width: 400px;
     background: #111;
@@ -24,10 +24,10 @@
     justify-content: center;
     flex-direction: column;
 }
-.ratings-container .ratings-post{
+.container .post{
     display: none;
 }
-.ratings-container .ratings-text{
+.container .text{
     font-size: 25px;
     color: #666;
     font-weight: 500;
@@ -44,7 +44,7 @@
 .container .edit:hover{
     text-decoration: underline;
 }*/
-.ratings-container .star-widget input{
+.container .star-widget input{
     display: none;
 }
 .star-widget label{
@@ -65,28 +65,28 @@ input#rate-5:checked ~ label{
     color: #fe7;
     text-shadow: 0 0 20px #952;
 }
-#rate-1:checked ~ .ratings-form header:before{
-    content: "I just hate it! ";
+#rate-1:checked ~ form header:before{
+    content: "I just hate it ";
 }
-#rate-2:checked ~ .ratings-form header:before{
-    content: "I don't like it! ";
+#rate-2:checked ~ form header:before{
+    content: "I don't like it ";
 }
-#rate-3:checked ~ .ratings-form header:before{
-    content: "I like it! ";
+#rate-3:checked ~ form header:before{
+    content: "It's awesome ";
 }
-#rate-4:checked ~ .ratings-form header:before{
-    content: "It's awesome!! ";
+#rate-4:checked ~ form header:before{
+    content: "I like it ";
 }
-#rate-5:checked ~ .ratings-form header:before{
-    content: "I love it!!! ";
+#rate-5:checked ~ form header:before{
+    content: "I love it ";
 }
-.ratings-container .ratings-form{
+.container form{
     display: none;
 }
-input:checked ~ .ratings-form{
+input:checked ~ form{
     display: block;
 }
-.ratings-form header{
+form header{
     width: 100%;
     font-size: 25px;
     color: #fe7;
@@ -95,11 +95,11 @@ input:checked ~ .ratings-form{
     text-align: center;
     transition: all 0.2s ease;
 }
-.ratings-form .ratings-textarea{
+form .textarea{
     height: 100px;
     width: 100%;
 }
-.ratings-form .ratings-textarea textarea{
+form .textarea textarea{
     height: 100%;
     width: 100%;
     outline: none;
@@ -110,15 +110,15 @@ input:checked ~ .ratings-form{
     font-size: 17px;
     resize: none;
 }
-.ratings-textarea textarea:focus{
+.textarea textarea:focus{
     border-color: #444;
 }
-.ratings-form .ratings-btn{
+form .btn{
     height: 45px;
     width: 100%;
     margin: 15px 0;
 }
-.ratings-form .ratings-btn button{
+form .btn button{
     height: 100%;
     width: 100%;
     border: 1px solid #444;
@@ -131,7 +131,7 @@ input:checked ~ .ratings-form{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.ratings-form .ratings-btn button:hover{
+form .btn button:hover{
     background: #fd4;
 	color: #000;
 }
