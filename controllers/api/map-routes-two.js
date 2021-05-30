@@ -2,21 +2,20 @@ const router = require('express').Router();
 const {Brew} = require('../../models');
 
 // get all the breweries in a city 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res) => { //should this be a post or get
   try {
     const city = req.body.city;
     // console.log("Hit this");
     const locationsData = await Brew.findAll({where: {city: city}});
     // console.log(locationsData)
 
+
     const locations = locationsData.map(location => location.get({
       plain: true
     }));
     // console.log(locations)
 
-    // res.json(JSON.stringify(locations));
-    res.status(200).json(locations);
-		// console.log(locations);
+    res.json(JSON.stringify(locations));
   } catch (err) {
     // console.log(err);
     res.status(500).json(err);
@@ -26,26 +25,6 @@ router.post('/', async (req, res) => {
 module.exports = router;
 
 
-
-const array = [
-  {
-  city: "denver",
-  address: "1234 main st",
-  url: "https://happy.com"
-  },{
-    city: "denver",
-    address: "1234 main st",
-    url: "https://happy.com"
-    },{
-      city: "denver",
-      address: "1234 main st",
-      url: "https://happy.com"
-      }, {
-        city: "denver",
-        address: "1234 main st",
-        url: "https://happy.com"
-        }
-];
 
 
 

@@ -10,4 +10,3 @@ btn.onclick = () => {
         // post.style.display = "none";
     }
     return false;
-}

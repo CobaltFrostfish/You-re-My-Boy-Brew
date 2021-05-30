@@ -83,23 +83,24 @@ body, html {
 	z-index: -100;
 }
 
-
 .marker {
-  background-image: url('mapbox-icon.png');
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
+	background-image: url('./images/Map-Marker-Ball.png');
+	background-size:
+		cover;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
 }
 
 .mapboxgl-popup {
-  max-width: 200px;
+	max-width: 200px;
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+	text-align:
+		center;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .btn-outline-success:hover {
@@ -146,6 +147,24 @@ body, html {
 
 .mapboxgl-canvas-container {
   width: 500px;
-  height: 600px;
+  height: 500px;
+	
+}
 
+.mapboxgl-map {
+	margin-top: 75px;
+	box-shadow: 0px 2px 0px  ;
+}
+
+.reviewCont{
+	margin-top: 115px;
+}
+
+.ratingCont{
+	max-width: 550px;
+	border-style: groove;
+}
+
+.ratingText{
+	font-size: x-large;
 }

@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Brew, Ratings } = require('../models');
+const { User, Brew, Review, Ratings } = require('../models');
 
 const userData = require('./userData.json');
 const brewData = require('./breweriesNew.json');
+const reviewData = require('./review.json');
 const ratingsData = require('./ratingsData.json');
 
 const seedDatabase = async () => {
@@ -14,6 +15,10 @@ const seedDatabase = async () => {
   });
 
   const brews = await Brew.bulkCreate(brewData, {
+    returning: true,
+  });
+
+  const review = await Review.bulkCreate(reviewData, {
     returning: true,
   });
 
