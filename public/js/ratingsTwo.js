@@ -8,7 +8,7 @@ const ratingFormHandler = async function (event) {
 	console.log(review_id);
 
 	const comment = document.querySelector('#rating_description').value.trim();
-	console.log(object);
+	console.log(comment);
 
 	if (stars && comment) {
 		await fetch('/api/ratings', {

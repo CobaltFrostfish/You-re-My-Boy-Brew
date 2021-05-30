@@ -31,11 +31,11 @@ router.post('/', async (req, res) => {
 	try {
 			const newRating = await Ratings.create({
 					...req.body,
-					user_id: req.session.user_id,
+					user_id: req.session.user_id
 			});
 
 			res.json(newRating);
-			// console.log(newRating);
+			console.log(newRating);
 	} catch (err) {
 			res.status(500).json(err);
 	}
