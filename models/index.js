@@ -3,18 +3,13 @@ const Brew = require('./Brew');
 const Review = require('./Review');
 const Ratings = require('./Ratings');
 
-User.hasMany(Ratings, {
-	foreignKey: 'user_id',
-	onDelete: 'CASCADE'
+Review.hasMany(Ratings, {
+	foreignKey: 'review_id',
 });
 
-Brew.belongsTo(User, {
-	foreignKey: 'user_id'
+Review.belongsTo(Brew, {
+	foreignKey: 'brew_id'
   });
-
-Brew.hasMany(Ratings,{
-	foreignKey: 'brew_id' 
-});
 
 Ratings.belongsTo(User, {
 	foreignKey: 'user_id'
