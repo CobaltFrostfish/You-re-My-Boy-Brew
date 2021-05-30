@@ -24,20 +24,20 @@ Ratings.init(
 					allowNull: false,
 					defaultValue: DataTypes.NOW,
 				},
-				review_id: {
-					type: DataTypes.INTEGER,
-					references: {
-						model: 'review',
-						key: 'id'
-					}
-				},
+                review_id: {
+                    type: DataTypes.INTEGER,
+                    references: {
+                        model: 'review',
+                        key: 'id'
+                    }
+                },
 				user_id: {
 					type: DataTypes.INTEGER,
 					references: {
 						model: 'user',
 						key: 'id',
 					},
-				}
+				},
     },
     {
         sequelize,

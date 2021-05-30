@@ -158,13 +158,44 @@ body, html {
 
 .reviewCont{
 	margin-top: 115px;
+	color: blue;
+	text-align: center;
 }
 
 .ratingCont{
-	max-width: 550px;
-	border-style: groove;
+	border-style: double;
 }
 
 .ratingText{
 	font-size: x-large;
+}
+
+
+h2 {
+	text-align: center;
+	color: var(--bootWarningGold) ;
+}
+
+h4 {
+	color: black;
+	font-weight: bolder;
+	font-size: 30px;
+}
+
+#number {
+	color: red;
+	font-style: bold;
+	font-size: 30px;
+}
+
+#comment {
+	color: black;
+}
+
+#nav {
+	color: var(--bootWarningGold) ;
+}
+
+#end {
+	color: var(--bootWarningGold)
 }

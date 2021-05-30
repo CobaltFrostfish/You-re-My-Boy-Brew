@@ -9,10 +9,10 @@ Review.hasMany(Ratings, {
 
 Review.belongsTo(Brew, {
 	foreignKey: 'brew_id'
-});
+  });
 
 Ratings.belongsTo(User, {
-	foreignKey: 'user_id',
+	foreignKey: 'user_id'
 });
 
 module.exports = { User, Brew, Review, Ratings };
