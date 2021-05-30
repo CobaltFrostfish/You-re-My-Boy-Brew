@@ -25,11 +25,16 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/mapPage', (req, res) => {
-  res.render('mapPage');
+	try{
+		res.render('mapPage', {
+			loggedIn: req.session.loggedIn
+		});
+	} catch (err) {
+		res.status(500).json(err);
+	};
 });
 
-// Ratings
-
+// Review
 router.get('/review/:id', async (req, res) => {
 	try {
 		const reviewData = await Review.findByPk(req.params.id, {
@@ -49,7 +54,7 @@ router.get('/review/:id', async (req, res) => {
 		// console.log(review);
 		res.render('review', {
 			...review,
-			logged_in: req.session.logged_in
+			loggedIn: req.session.loggedIn
 		});
 	} catch (err) {
 		res.status(500).json(err);
