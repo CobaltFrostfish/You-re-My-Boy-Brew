@@ -1,47 +1,44 @@
 <div class="reviewCont">
-	<div>Brewery Name :{{brew.name}}</div>
+	<h2 class="blogTitle text-uppercase">{{brew.name}}</h2>
 	<div>Brewery Type :{{brew.brewery_type}}</div>
 	<div>Address :{{brew.street}}</div>
 	<div>Zip Code :{{brew.postal_code}}</div>
 	<div>Phone Number :{{brew.phone}}</div>
 </div>
 
-
-<div class="text">
-	<div class="container blogBoxCont">
-		<div class="row headerRow text-center">
-			{{!-- <div class="col-8"> --}}
-				<h2 class="blogTitle text-uppercase">{{brew.name}}</h2>
-			</div>
-			{{!-- <div class="col-4"> --}}
-			</div>
-		</div>
-		<p class="text-center blogDescTwo">{{description}}</p>
-	</div>
-</div>
-
 {{#if loggedIn}}
 
 <form class="d-flex flex-wrap justify-content-center new-rating-form" data-reviewid={{id}}>
 	{{!-- the reviewid is what ties the new rating to the page --}}
-	<div class="">
-		<select name="ratingStars" id="rating_five">
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-		</select>
-	</div>
-	<div class="">
-		<textarea id='rating_description' name="rating-body" placeholder="Enter a rating here..." cols="30"
-			rows="2"></textarea>
-	</div>
-	<div class="btnComment p-2">
-		<button class="button btn btn-primary" type="submit">Add Review</button>
+	<div class="ratingMainCont">
+		<div class="ratingStarsCont">
+			<label>How many Stars ⭐ would you give the Brewery? </label>
+			<select name="ratingStars" id="rating_five">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="commentCont col">
+					<textarea id='rating_description' name="rating-body" placeholder="Enter a review or comment..." cols="30"
+						rows="2"></textarea>
+				</div>
+
+				<div class="btnComment col">
+					<button class="button btn btn-primary" type="submit">Add Review</button>
+				</div>
+
+			</div>
+
+		</div>
+
 	</div>
 </form>
-
+<div class="bg-review"></div>
 {{/if}}
 
 <h4 class="text-center">Ratings</h4>
@@ -55,5 +52,4 @@
 </div>
 {{/each}}
 
-{{!-- <script src="/js/ratings-input.js"></script> --}}
-<script src="/js/ratingsTwo.js"></script>
+<script src="/js/ratings.js"></script>
