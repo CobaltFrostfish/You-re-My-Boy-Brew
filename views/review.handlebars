@@ -1,5 +1,6 @@
+
 <div class="reviewCont">
-	<div>Brewery Name :{{brew.name}}</div>
+	<h2 class="blogTitle text-uppercase">{{brew.name}}</h2>
 	<div>Brewery Type :{{brew.brewery_type}}</div>
 	<div>Address :{{brew.street}}</div>
 	<div>Zip Code :{{brew.postal_code}}</div>
@@ -7,18 +8,6 @@
 </div>
 
 
-<div class="text">
-	<div class="container blogBoxCont">
-		<div class="row headerRow text-center">
-			{{!-- <div class="col-8"> --}}
-				<h2 class="blogTitle text-uppercase">{{brew.name}}</h2>
-			</div>
-			{{!-- <div class="col-4"> --}}
-			</div>
-		</div>
-		<p class="text-center blogDescTwo">{{description}}</p>
-	</div>
-</div>
 
 {{#if loggedIn}}
 
