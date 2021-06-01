@@ -24,9 +24,9 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/mapPage', (req, res) => {
+router.get('/mappage', (req, res) => {
 	try{
-		res.render('mapPage', {
+		res.render('mappage', {
 			loggedIn: req.session.loggedIn
 		});
 	} catch (err) {
