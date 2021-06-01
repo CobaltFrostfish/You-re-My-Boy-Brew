@@ -12,7 +12,7 @@
 
 ## Links
 * **[Repository](https://github.com/CobaltFrostfish/You-re-My-Boy-Brew)**
-* **[Heroku Live App](https://agile-reaches-59564.herokuapp.com/)**
+* **[Heroku Live App](https://afternoon-sands-66827.herokuapp.com/)**
 # [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## The project
