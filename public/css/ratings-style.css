@@ -15,7 +15,7 @@
 .ratings-container{
     position: relative;
     width: 400px;
-    background: #111;
+    background: #666;
     padding: 20px 30px;
     border: 1px solid #444;
     border-radius: 5px;
@@ -29,10 +29,10 @@
 }
 .ratings-container .ratings-text{
     font-size: 25px;
-    color: #666;
+    color: #000;
     font-weight: 500;
 }
-.container .edit{ 
+.ratings-container .edit{ 
     position: absolute;
     right: 10px;
     top: 5px;
@@ -61,7 +61,7 @@ input:not(:checked) ~ label:hover ~ label{
 input:checked ~ label{
     color: #fd4;
 }
-input#rate-5:checked ~ label{
+input #rate-5:checked ~ label{
     color: #fe7;
     text-shadow: 0 0 20px #952;
 }
@@ -114,7 +114,7 @@ input:checked ~ .ratings-form{
     border-color: #444;
 }
 .ratings-form .ratings-btn{
-    height: 45px;
+    height: 50px;
     width: 100%;
     margin: 15px 0;
 }
