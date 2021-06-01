@@ -252,3 +252,19 @@ h4 {
 	opacity: 0.70;
 	z-index: -100;
 }
+
+.bg-review{
+	position: fixed;
+	bottom: 0;
+	right:0;
+	height: 80vh;
+	width: 100%;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url("../images/beer-6lite.png");
+	background-size: cover;
+	margin-top: -70px;
+	opacity: 0.70;
+	z-index: -100;
+}
