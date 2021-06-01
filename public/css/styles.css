@@ -111,7 +111,10 @@ body, html {
 /* For the search container on the map page */
 .searchCont{
 	margin-top: 10px;
-	max-width: 475px;
+	max-width: 375px;
+	background-color: var(--bootWarningGold);
+	border-radius: 25px;
+	border-style: groove;
 }
 
 .tableMap{
@@ -168,6 +171,7 @@ body, html {
 	border-style: double;
 	margin-bottom: 10px;
 	max-width: 500px;
+	min-width: 350px;
 	margin-left: auto;
 	margin-right: auto;
 	box-shadow: 5px 4px 5px  ;
